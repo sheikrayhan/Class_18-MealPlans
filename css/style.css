@@ -1,0 +1,889 @@
+/* Common CSS End */
+:root{
+    --primaryColor: #ffebe1;
+    --secondaryColor: #649483;
+    --inputColor: #fff4ee;
+    --hoverColor: #dd7017;
+}
+body.darkMode{
+    --primaryColor: #070707;
+    --secondaryColor: #daeee7;
+    --inputColor: #7e5a46;
+    --hoverColor: #88dbbb;
+}
+body.darkMode{
+    background: #111;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    list-style-type: none;
+}
+.container{
+    width: 1170px;
+    margin: auto;
+
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+body{
+    font-family:'Open Sans',sans-serif;
+}
+/* Common CSS Start */
+
+/* Preloader Section CSS Start */
+#preloader{
+    position: fixed;
+    z-index: 99999999999999;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preloader .loader span{
+    display: inline-block;
+    width: 2px;
+    height: 200px;
+    background-color: orange;
+    margin: 0 5px;
+    animation: preloader 1s infinite alternate;
+  }
+  #preloader .loader span:nth-child(1){
+    animation-delay: 0.1s;
+    background-color: red;
+  }
+  #preloader .loader span:nth-child(2){
+    animation-delay: 0.2s;
+    background-color: green;
+  }
+  #preloader .loader span:nth-child(3){
+    animation-delay: 0.3s;
+    background-color: black;
+  }
+  #preloader .loader span:nth-child(4){
+    animation-delay: 0.4s;
+    background-color: pink;
+  }
+  #preloader .loader span:nth-child(5){
+    animation-delay: 0.4s;
+    background-color: blue;
+  }
+  #preloader .loader span:nth-child(6){
+    animation-delay: 0.3s;
+    background-color: violet;
+  }
+  #preloader .loader span:nth-child(7){
+    animation-delay: 0.2s;
+    background-color: yellowgreen;
+  }
+  #preloader .loader span:nth-child(8){
+    animation-delay: 0.1s;
+    background-color: navy;
+  }
+  @keyframes preloader {
+    from{
+      transform: scaleY(0) rotate(0deg);
+    }
+    to{
+      transform: scaleY(1) rotate(360deg);
+    }
+  }
+/* Preloader Section CSS End */
+
+/* Nav CSS Start */
+nav{
+    background-color: var(--primaryColor);
+    box-shadow: 0 1px 5px rgba(146, 127, 116, .21);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999999;
+    transition: 2s;
+}
+nav.active{
+    position: fixed;
+    animation: menu_fixed 1s;
+}
+@keyframes menu_fixed {
+    from{
+        left: -200px;
+    }   
+    to{
+        left: 0px;
+    } 
+}
+nav #sideMenu{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    background: var(--secondaryColor);
+    z-index: 999999999;
+    margin-left: -200px;
+    overflow-y: auto;
+    transition: .5s;
+
+}
+nav #sideMenu.active{
+    margin-left: 0px;
+    animation: sideMenu_fixed 1s;
+}
+@keyframes sideMenu_fixed {
+    from{
+        left: 300px;
+    }   
+    to{
+        left: 0px;
+    } 
+}
+nav #sideMenu ul li a{
+    color: var(--primaryColor);
+    font-size: 19px;
+    padding: 10px 25px;
+    text-transform: capitalize;
+    transition: .6s;
+}
+nav #sideMenu ul li a:hover{
+    color: var(--hoverColor);
+}
+nav .row{
+    align-items: center;
+}
+nav .container .logo{
+    width: 20%;
+    margin: auto;
+}
+nav .container .logo img{
+    display: block;
+    transition: all linear 0.3s;
+}
+nav .container .logo img:hover{
+    padding-left: 5px;
+}
+nav .container .menu{
+    width: 50%;
+}
+nav .container .menu ul{
+    justify-content: center;
+}
+nav .container .second_menu ul{
+    justify-content: flex-end;
+}
+nav .container .menu ul a{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    padding: 42px 25px;
+    text-transform: capitalize;
+    transition: .6s;
+}
+nav .container .menu ul a:hover{
+    color: var(--hoverColor);
+
+}
+
+
+nav .container .second_menu{
+    width: 30%;
+}
+nav .container .second_menu ul a{
+    color: var(--secondaryColor);
+    padding: 9px;
+}
+
+nav .container .second_menu ul .button a{
+    background-color: var(--secondaryColor);
+    padding: 9px 18px;
+    color: var(--primaryColor);
+    border-radius: 7px;
+    transition: 0.6s;
+}
+nav .container .second_menu ul .button a:hover{
+    background-color: var(--hoverColor);
+}
+/* Nav CSS End */
+
+/* Banner Section CSS Start */
+#banner{
+    background-color: var(--primaryColor);
+    position: relative;
+    z-index: 1;
+    /* margin-bottom: 75px; */
+}
+#banner .banner_shape_1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 100%; */
+    z-index: -1;
+}
+
+#banner .banner_shape_2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+#banner .container .img-part{
+    width: 50%;
+    text-align: center;
+}
+#banner .container .img-part{
+    margin-left: -50px;
+    margin-top: 142px;
+
+}
+#banner .container .img-part img{
+    width: 100%;
+}
+#banner .container .img-part h4{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+#banner .container .img-part p{
+    color: var(--secondaryColor);
+    font-size: 16px;
+    width: 360px;
+    margin: auto;
+    margin-bottom: 75px;
+
+}
+
+#banner .container .heading_part{
+    width: 50%;
+    text-align: left;
+}
+
+#banner .container .heading_part .heading h1{
+    width: 100%;
+    color: var(--hoverColor);
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 230px;
+    margin-bottom: 20px;
+}
+#banner .container .heading_part .heading .button_1{
+    font-size: 19px;
+    background-color: var(--secondaryColor);
+    padding: 15px 18px;
+    color: var(--primaryColor);
+    font-weight: 700;
+    border-radius: 7px;
+    text-transform: uppercase;
+}
+#banner .container .heading_part .heading .button_1:hover{
+    background-color: var(--hoverColor);
+}
+
+#banner .container .heading_part .heading .button_2{
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    font-size: 19px;
+    font-weight: 700;
+    padding: 13px 15px;
+    border: 2px solid var(--secondaryColor);
+    border-radius: 7px;
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+#banner .container .heading_part .heading .button_2:hover{
+    background-color: var(--hoverColor);
+    color: var(--inputColor);
+}
+#banner .container .heading_part .meal_option{
+    background-color: var(--hoverColor);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    /* margin-bottom: 143px; */
+    border-radius: 15px;
+}
+#banner .container .heading_part .meal_option .meal_item{
+    width: 25%;
+    padding: 20px;
+    align-items: center;
+}
+#banner .container .heading_part .meal_option .meal_item img{
+    width: 100%;
+}
+
+#banner .container .heading_part .meal_option .meal_item p{
+    color: var(--inputColor);
+    font-size: 12px;
+    text-align: center;
+    /* margin: auto; */
+}
+/* Banner Section CSS End */
+
+
+
+/* Favorites Section CSS Start */
+#favorites{
+    background-color: var(--secondaryColor);
+    /* height: 1015px; */
+}
+#favorites .container h2{
+    color: var(--inputColor);
+    font-size: 90px;
+    font-weight: 700;
+    padding-top: 115px;
+    /* margin-top: 115px; */
+}
+#favorites .container p{
+    color: var(--inputColor);
+    font-size: 17px;
+    font-weight: 700;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+#favorites .container .fvrt_item{
+    width: 30%;
+    margin: auto;
+    background: var(--inputColor);
+    border-radius: 30px;
+    margin-top: 70px;
+    margin-right: 22px;
+    margin-bottom: 115px;
+    /* padding: 50px; */
+}
+#favorites .container .fvrt_item h3{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    padding: 65px 90px 30px;
+}
+#favorites .container .fvrt_item img{
+    display: block;
+}
+
+#favorites .container .fvrt_item p{
+    color: var(--secondaryColor);
+    text-align: center;
+    padding: 0px 40px;
+    padding-bottom: 70px;
+    /* font-size: 19px; */
+}
+/* Favorites Section CSS End */
+
+/* April Meals Plans Section CSS Start */
+#meal_plans{
+    background-color: var(--primaryColor);
+    position: relative;
+    z-index: 1;
+}
+#meal_plans .meal_plans_shape_1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#meal_plans .meal_plans_shape_2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#meal_plans .container .img{
+    width: 40%;
+    padding-right: 40px;
+    padding-top: 115px;
+}
+#meal_plans .container .img img{
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    /* margin: auto; */
+}
+
+#meal_plans .container .information{
+    width: 60%;
+    padding-left: 40px;
+}
+#meal_plans .container .information h5{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 150px;
+}
+#meal_plans .container .information h2{
+    color: var(--hoverColor);
+    font-size: 95px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+#meal_plans .container .information p{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    text-align: justify;
+    padding: 30px 0px;
+    width: 525px;
+}
+#meal_plans .container .information .order_section{
+    display: flex;
+    flex-wrap: wrap
+}
+#meal_plans .container .information .order_section .img_1{
+    width: 50%;
+    padding-right: 15px;
+}
+#meal_plans .container .information .order_section .img_1 img{
+    width: 100%;
+    border-radius: 20px;
+}
+#meal_plans .container .information .order_section .img_2{
+    width: 50%;
+    padding-left: 15px;
+}
+#meal_plans .container .information .order_section .img_2 img{
+    width: 100%;
+    border-radius: 20px;
+}
+#meal_plans .container .information .order_section .order_button{
+    font-size: 19px;
+    background-color: var(--secondaryColor);
+    padding: 15px 17px;
+    color: var(--primaryColor);
+    font-weight: 700;
+    border-radius: 7px;
+    text-transform: uppercase;
+    transition: 0.7s;
+    margin-top: -30px;
+}
+#meal_plans .container .information .order_section .order_button:hover{
+    background-color: var(--hoverColor);
+}
+
+#meal_plans .container .recipes .recipe_item{
+    width: 60%;
+    margin-top: 250px;
+    margin-bottom: 120px;
+}
+#meal_plans .container .recipes .recipes_main_img{
+    width: 40%;
+    margin-top: 220px;
+    margin-bottom: 120px;
+}
+#meal_plans .container .recipes .recipes_main_img img{
+    width: 100%;
+    border-radius: 20px;
+}
+#meal_plans .container .recipes .recipe_item .img_part{
+    display: flex;
+    flex-wrap: wrap;
+}
+#meal_plans .container .recipes .recipe_item .img_part .imgages{
+    width: 50%;
+}
+#meal_plans .container .recipes .recipe_item .img_part img{
+    display: block;
+    border-radius: 20px;
+    margin-top: 35px;
+}
+
+#meal_plans .container .recipes .recipe_item h6{
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--secondaryColor);
+}
+#meal_plans .container .recipes .recipe_item h3{
+    font-size: 112px;
+    font-weight: 700;
+    color: var(--hoverColor);
+}
+#meal_plans .container .recipes .img_part .see_button{
+    font-size: 19px;
+    background-color: var(--secondaryColor);
+    padding: 15px 20px;
+    color: var(--inputColor);
+    font-weight: 700;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: 0.7s;
+    margin-top: -30px;
+}
+#meal_plans .container .recipes .img_part .see_button:hover{
+    background-color: var(--hoverColor);
+    /* color: #639383; */
+}
+
+/* April Meals Plans Section CSS End */
+
+/* Our Process Section CSS Start */
+#process{
+    background-color: var(--secondaryColor);
+}
+#process .container h2{
+    color: var(--inputColor);
+    font-size: 112px;
+    font-weight: 700;
+    padding-top: 115px;
+}
+#process .container p{
+    color: var(--inputColor);
+    font-size: 17px;
+    font-weight: 700;
+    padding: 20px 0px;
+}
+#process ,.container .row{
+    justify-content: space-between;
+}
+#process .container .process_item{
+    width: 28%;
+    margin-top: 70px;
+}
+#process .container .process_item img{
+    display: block;
+    width: 100%;
+    padding: 70px;
+}
+#process .container .arrow{
+    width: 8%;
+    margin-top: 70px;
+}
+#process .container .arrow i{
+    display: block;
+    text-align: center; 
+    color: var(--primaryColor);
+    font-size: 40px;
+    padding: 200px 0px;
+
+
+}
+#process .container .process_item{
+    width: 310px;
+    /* height: 380px; */
+    background-color: var(--inputColor) ;
+    margin-bottom: 115px;
+    border-radius: 15px;
+    text-align: center;
+}
+#process .container .process_item h5{
+    color: var(--hoverColor);
+    font-size: 29px;
+    font-weight: 700;
+    padding: 40px 17px 0px ;
+}
+#process .container .process_item p{
+    color: var(--hoverColor);
+    font-size: 18px;
+    padding: 0px 20px 35px;
+}
+/* Our Process Section CSS End */
+
+/* Meal Love Section CSS Start */
+#meal_love{
+    background-color: var(--primaryColor);
+    position: relative;
+    z-index: 1;
+}
+#meal_love .meal_love_shape{
+    position: absolute;
+    right: 30%;
+    /* left: 0; */
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+}
+#meal_love::before {
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hoverColor);
+    z-index: -1;
+    border-radius: 25px 0px 0px 25px;
+}
+#meal_love .container .info{
+    width: 50%;
+    margin: 230px 0px;
+}
+#meal_love .container .info h2{
+    color: var(--hoverColor);
+    font-size: 90px;
+    font-weight: 700;
+}
+#meal_love .container .info p{
+    color: var(--secondaryColor);
+    font-size: 19px;
+    font-weight: 700;
+    padding: 30px 0px;
+    text-align: justify;
+}
+#meal_love .container .info a{
+    font-size: 19px;
+    background-color: var(--secondaryColor);
+    padding: 15px 20px;
+    color: var(--inputColor);
+    font-weight: 700;
+    border-radius: 15px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: 0.7s;
+}
+#meal_love .container .info a:hover{
+    background-color: #dc7017;
+}
+
+
+#meal_love .container .img_part{
+    width: 50%;
+    margin-top: 80px;
+    text-align: right;
+}
+#meal_love .container .img_part img{
+    display: block;
+    width: 100%;
+    /* margin: auto; */
+}
+#meal_love .container .img_part i{
+    font-size: 50px;
+    color: var(--inputColor);
+    padding-bottom: 20px;
+}
+#meal_love .container .img_part p{
+    color: var(--inputColor);
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+/* Meal Love Section CSS End */
+
+/* Story Section CSS Start */
+#story{
+    background-color: var(--secondaryColor);
+}
+#story .container .title h2{
+    color: var(--primaryColor);
+    font-size: 112px;
+    font-weight: 700;
+    padding: 100px 0px;
+}
+#story .container .info{
+    padding-bottom: 160px;
+}
+#story .container .info .confession{
+    width: 30%;
+    text-align: center;
+}
+#story .container .info .row{
+    justify-content: space-between;
+}
+#story .container .info .confession h3{
+    color: var(--inputColor);
+    font-size: 17px;
+    font-weight: 700;
+    padding: 35px 0px 20px 0px;
+    text-transform: uppercase;
+}
+#story .container .info .confession p{
+    font-size: 18px;
+    color: var(--inputColor);
+    text-align: center;
+}
+/* Story Section CSS End */
+
+/* Meal Plans last Section CSS Start */
+#mp_made_4u{
+    background-color: var(--primaryColor);
+    position: relative;
+    z-index: 1;
+}
+#mp_made_4u .made_4u-shape_1{
+    position: absolute;
+    bottom: 50%;
+    /* top: 0; */
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+#mp_made_4u .made_4u-shape_2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+}
+#mp_made_4u .row{
+    justify-content: space-between;
+    text-align: center;
+}
+#mp_made_4u .row .img_part_1{
+    width: 25%;
+    padding: 500px 0px 20px 0px;
+}
+#mp_made_4u .row .img_part_1 img{
+    width: 100%;
+    display: block;
+    /* padding: 470px; */
+}
+
+#mp_made_4u .row .info_section{
+    width: 50%;
+    padding: 300px 0px 200px 0px;
+}
+#mp_made_4u .row .info_section h2{
+    color: var(--hoverColor);
+    font-size: 90px;
+    font-weight: 700;
+    text-align: center;
+}
+#mp_made_4u .row .info_section p{
+    color: var(--secondaryColor);
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 0px;
+}
+#mp_made_4u .row .info_section .button{
+    font-size: 19px;
+    background-color: var(--secondaryColor);
+    padding: 15px 20px;
+    color: var(--inputColor);
+    font-weight: 700;
+    border-radius: 15px; 
+    transition: .5s;
+}
+#mp_made_4u .row .info_section .button:hover{
+    background-color: var(--hoverColor);
+}
+
+#mp_made_4u .row .img_part_2{
+    width: 25%;
+    padding-top: 60px;
+}
+#mp_made_4u .row .img_part_2 img{
+    width: 100%;
+    display: block;
+}
+/* Meal Plans last Section CSS End */
+
+/* Footer Section CSS Start */
+footer{
+    background-color: var(--secondaryColor);
+}
+footer .container .information{
+    padding: 125px 0px;
+}
+footer .container .information .info{
+    width: 25%;
+}
+footer .container .information .info h3{
+    color: var(--inputColor);
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+footer .container .information .info li a{
+    display: block;
+    font-size: 18px;
+    color: var(--inputColor);
+    padding: 5px 0px;
+    transition: .6s;
+}
+footer .container .information .info li a:hover{
+    color: var(--hoverColor);
+}
+footer .container .information .newsletter a{
+    display: block;
+    font-size: 17px;
+    color: var(--inputColor);
+    padding: 5px 0px;
+    transition: .6s;
+    padding-bottom: 10px;
+}
+footer .container .information .newsletter a:hover{
+    color: var(--hoverColor);
+}
+footer .container .information .newsletter form input{
+    background-color: var(--secondaryColor);
+    color: var(--inputColor);
+    border: 2px solid var(--inputColor);
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 5px 10px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+footer .container .information .newsletter .password{
+    position: relative;
+}
+footer .container .information .newsletter .password i{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    color: var(--inputColor);
+}
+
+
+footer .container .information .newsletter form button{
+    color: var(--secondaryColor);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: var(--inputColor);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: block;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .6s;
+}
+footer .container .information .newsletter form button:hover{
+    color: var(--hoverColor);
+    /* background-color: #639383; */
+}
+footer .container .copyright{
+    padding-bottom: 125px;
+}
+footer .container .copyright .copy{
+    width: 70%;
+}
+footer .container .copyright .copy h5{
+    color: var(--inputColor);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+footer .container .copyright .social{
+    width: 30%;
+    text-align: right;
+}
+footer .container .copyright .social a{
+    padding: 0px 15px;
+    
+}
+footer .container .copyright .social a img{
+    display: block;
+}
+
+/* Footer Section CSS End */
